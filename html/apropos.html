@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/style_main.css">
+    <script src="../js/js_main.js"></script>
+    <title>Prestige Tourisme</title>
+</head>
+
+<body onload = "verifCo();">
+    <header>
+        <!--Entête de navigation-->
+        <h1 class="logo"><em>Prestige</em> <strong>Tourisme</strong></h1>
+        <nav>
+            <ul>
+                <li><a href="main.html">Accueil</a></li><!--Permet d'enlever l'espace blanc causé par inline block
+                --><li>
+                    <div class="dropdown">
+                        <button class="dropdown_button">Réservation</button>
+                        <div class="dropdown_content">
+                            <a href="resa_tahiti.html?id=0">Tahiti</a>
+                            <a href="resa_tahiti.html?id=3">Paris</a>
+                            <a href="resa_tahiti.html?id=4">New York</a>
+                            <a href="resa_tahiti.html?id=1">Sri Lanka</a>
+                            <a href="resa_tahiti.html?id=2">Sao Paulo</a>
+                            <a href="resa_tahiti.html?id=5">Moscou</a>
+                        </div>
+                    </div>
+                </li><!--
+                --><li><a class="active" href="apropos.html">A propos & contact</a></li><!--
+                --><li id="li_connexion">
+                    <div class="tooltip">
+                        <span class="tooltip-text">Veuillez autoriser tous les cookies pour le bon fonctionnement du site !</span>
+                        <div class="form_connexion">    <!--Authentification-->
+                            <button class="connexion_bouton">Connexion</button>
+                            <form method="GET" onsubmit="authentification()">
+                                <input id="userID" type="text" title="identifiant" placeholder="Identifiant" />
+                                <input id="userPass" type="password" title="mot de passe" placeholder="Mot de passe" />
+                                <button type="submit" class="bouton_connexion">Connexion</button>
+                            </form>
+                        </div>
+                    </div>
+                </li><!--
+                --><li id="icon_panier"><img onclick="window.location.href='panier.html'" src = "../images_villes/icon.png"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>A propos & contacts</h2>
+        <p>Contactez nous<br><br> Tel : <a href="tel:0452634048">04 52 63 40 48</a><br><br>Mail : <a href="mailto:prestigetourisme@voyage.fr?subject=Demande de renseignements&body=Bonjour, je souhaiterais obtenir des renseignements sur ">prestigetourisme@voyage.fr</a><br><br>Adresse : 26 rue république 75006 Paris</p>
+        <img src="../images_villes/map-paris.jpg" alt style="width: 300px; height:225px; padding-left: 40%; padding-bottom: 3%;">
+    </section>
+
+    <footer>
+        <ul>
+            <li id="contact-button"><a href="">Contact</a></li>
+            <li><a href="">Mentions légales</a></li>
+        </ul>
+    </footer>
+
+</body>
+
+</html>

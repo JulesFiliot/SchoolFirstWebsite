@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/style_main.css">
+    <script src="../js/js_main.js"></script>
+    <title>Prestige Tourisme</title>
+</head>
+
+<body onload="maj(); changeActive(); verifCo();">
+    <header>
+        <!--Entête de navigation-->
+        <h1 class="logo"><em>Prestige</em> <strong>Tourisme</strong></h1>
+        <nav>
+            <ul>
+                <li><a href="main.html">Accueil</a></li><!--Permet d'enlever l'espace blanc causé par inline block
+                --><li>
+                    <div class="dropdown">
+                        <button class="dropdown_button">Réservation</button>
+                        <div class="dropdown_content">
+                            <a href="resa_tahiti.html?id=0">Tahiti</a>
+                            <a href="resa_tahiti.html?id=3">Paris</a>
+                            <a href="resa_tahiti.html?id=4">New York</a>
+                            <a href="resa_tahiti.html?id=1">Sri Lanka</a>
+                            <a href="resa_tahiti.html?id=2">Sao Paulo</a>
+                            <a href="resa_tahiti.html?id=5">Moscou</a>
+                        </div>
+                    </div>
+                </li><!--
+                --><li><a href="apropos.html">A propos & contact</a></li><!--
+                --><li id="li_connexion">
+                    <div class="tooltip">
+                        <span class="tooltip-text">Veuillez autoriser tous les cookies pour le bon fonctionnement du site !</span>
+                        <div class="form_connexion">
+                            <button class="connexion_bouton">Connexion</button>
+                            <form method="GET" onsubmit="authentification()">
+                                <input id="userID" type="text" title="identifiant" placeholder="Identifiant" />
+                                <input id="userPass" type="password" title="mot de passe" placeholder="Mot de passe" />
+                                <button type="submit" class="bouton_connexion">Connexion</button>
+                            </form>
+                        </div>
+                    </div>
+                </li><!--
+                --><li id="icon_panier"><img onclick="window.location.href='panier.html'" src = "../images_villes/icon.png"></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <br/>
+        <div class="ensemble_grid">
+            <div class="elmt1">
+                <h2 id="titre"><em>Tahiti</em></h2>
+                <p id="parag_1">Avec 1 042 km2 et 183 645 habitants en 2012, Tahiti est à la fois la plus grande et la plus peuplée des îles de la Polynésie française.<br/> L’île concentre l’essentiel des activités économiques de l’archipel polynésien. La ville de Papeete,
+                    située sur la côte nord-ouest de l’île, est la capitale de la Polynésie française et en abrite toutes les institutions politiques.</p>
+            </div>
+            <div class="elmt2"></div>
+            <div class="elmt3"></div>
+            <div class="elmt4">
+                <p id="parag_2">Partez à Tahiti pour 230€/jour par adulte et 92€/jour par enfant.<br/> Profitez d'un voyage unique au monde grâce à nos services prestiges exclusifs ! </p>
+            </div>
+            <div class="elmt5">
+                <form  method="GET" name="form1" onchange="prixVoyage();" onsubmit="url_send();">
+                    <p id="form_title">réserver</p>
+                    <fieldset>
+                        <legend>Identité</legend>
+                        Prénom :* <br/>
+                        <input required type="text" id="prenom"><br/> Nom :*<br/>
+                        <input required type="text" id="name"><br/> Email :*<br/>
+                        <input required type="email" id="mail"><br/> Téléphone :<br/>
+                        <input type="tel" name="phone" id="numero_tel"><br/>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Réservation</legend>
+                        Date de départ :*<br>
+                        <input required type="date" id="date_dep"><br> Date de retour :*<br>
+                        <input required min=1 type="date" id="date_ret"><br> Nombre d'adulte(s) :* <br>
+                        <input required min=0 type="number" id="nb_adultes"><br> Nombre d'enfant(s) :*<br>
+                        <input required type="number" id="nb_enfants"><br> Petit déjeuner ? (20€/j/pers.)
+                        <input type="checkbox" id="check_dej"><br>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Autres</legend>
+                        Un renseignement ?<br/>
+                        <textarea name="Renseignement" rows="8" cols="30"></textarea><br/> Prix total du voyage :
+                        <div><span id="prix_total"></span><span>€</span></div>
+                    </fieldset>
+                    <div>
+                        <input type="reset" value="Effacer">
+                        <input type="submit" value="Valider" id="validate_button">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <ul>
+            <li id="contact-button"><a href="apropos.html">Contact</a></li>
+            <li><a href="">Mentions légales</a></li>
+        </ul>
+    </footer>
+
+</body>
